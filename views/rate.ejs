@@ -1,0 +1,36 @@
+<% include type_names %>
+<%
+    weight = Number(weight).toFixed(2);
+    rate = Number(rate).toFixed(2);
+    type = typeName[type];
+
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Your Rate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Your Rate</h1>
+    <h2>$<%=rate %><h2>
+    <h3>Based on the following mailing information:</h3>
+    <table>
+        <tr>
+            <td>Weight:</td>
+            <td><%=weight %> oz</td>
+        </tr>
+        <tr>
+            <td>Type:</td>
+            <td><%=type %></td>
+        </tr>
+    <table>
+
+
+</body>
+</html>
