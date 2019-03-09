@@ -1,20 +1,20 @@
 const express = require('express');
 const app = express();
-port = 5000;
-//const port = process.env.PORT || 5000;
-app.get('/', (req, res) => res.send('Hello World!'));
+const port = process.env.PORT || 5000;
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
+
+app.get('/', (req, res) => res.redirect('form.html'));
 app.get('/rate', function (req, res) {
     var weight = req.query.weight;
     var type = req.query.type;
-    rate = getRate(weight, type);
+    rate = calculateRate(weight, type);
     packageData = {weight: weight, type: type, rate: rate};
     res.render('rate', packageData);
 })
 
-function getRate(weight, type) {
+function calculateRate(weight, type) {
     if ((type == 'stamped' || type == 'metered') && weight > 3.5) {
         type = 'flats';
     }

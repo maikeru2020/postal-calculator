@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Postage Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
     <script src="main.js"></script>
 </head>
-<body>
+<body class="center">
     <h1>Postage Calculator</h1>
     <form action="rate" method="get">
-        Item Weight:<br><input type="number" name="weight" min="0.01" max="13" step="0.01"><br><br>
+        Item Weight (oz.):<br><input type="number" name="weight" min="0" max="13" step="0.01"><br><br>
         Select Mail Type:<br>
         <select name="type">
             <option value="stamped">Letters (Stamped)</option>
